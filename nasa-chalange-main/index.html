@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solar system simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="main.js"></script>
+
+    <script>
+        
+    </script>
+
+  <div class="flex-container">
+    
+    <div class="caixa-lateral">
+        <select class="input" id="nome-do-planeta">
+            <option value="100">...</option>
+            <!-- <option value="Mercurio">Mercurio</option>
+            <option value="Venus">Venus</option>
+            <option value="Terra">Terra</option>
+            <option value="Terra">marte</option>
+            <option value="Terra">saturno</option> -->
+        </select>
+        <label class="tempo2"> time scale </label>
+        <input class="tempo" type="number" id="velocidade" value="1">
+        <button id="reset-camera-btn">Reset Camera</button> 
+    </div>
+    <div>
+        <div id="earth-container"></div>
+        <div id="info-panel"></div>
+    </div>
+    
+  </div>
+    <!-- Caixa de informações do planeta -->
+    <div id="info-box">
+        <h2 id="planet-name"></h2>
+        <p id="planet-size"></p>
+        <p id="planet-distance"></p>
+        <p id="descricao"></p>
+    </div>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="main2.js"></script> -->
+</body>
+</html>
