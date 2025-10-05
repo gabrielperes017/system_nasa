@@ -2,10 +2,21 @@
 import {createPlanet, createAllPlanets, orbitalElements} from './js/planets.js';
 import {updateOrbit} from './js/orbits.js';
 import { showPlanetInfo, hidePlanetInfo } from './js/hud.js';
-import { centerOnPlanet, resetCameraToOriginalPosition } from './js/usuario.js';
+import { centerOnPlanet, resetCameraToOriginalPosition } from './js/camera.js';
 
 export const scene = new THREE.Scene();
 export const camera = new THREE.PerspectiveCamera(45, (window.innerWidth/100*85) / (window.innerHeight-4), 0.1, 3000);
+
+const planetData = {
+    mercurio: "Mercúrio é o planeta mais próximo do Sol, com temperaturas extremas.",
+    venus: "Vênus possui uma atmosfera densa e quente, rica em dióxido de carbono.",
+    terra: "A Terra é o único planeta conhecido que abriga vida.",
+    marte: "Marte é conhecido como o planeta vermelho e possui calotas polares de gelo.",
+    jupiter: "Júpiter é o maior planeta do sistema solar, com uma grande mancha vermelha.",
+    saturno: "Saturno é famoso por seus anéis compostos de gelo e rochas.",
+    urano: "Urano tem um eixo de rotação inclinado e é um gigante gasoso azul.",
+    netuno: "Netuno é o planeta mais distante do Sol, com ventos extremamente fortes."
+  };
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth/100*85, window.innerHeight-4);

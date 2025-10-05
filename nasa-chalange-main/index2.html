@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>solar system simulation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulação do Sistema Solar</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script type="module" src="main2.js"></script>
+  <!-- Fundo dinâmico -->
+  <div class="space-bg"></div>
 
-    <script>
-        
-    </script>
+  <!-- Barra lateral de controle -->
+  <aside class="sidebar">
+    <h1 class="logo">🌌 Galaxy<span>Sim</span></h1>
 
-  <div class="flex-container">
-    
-    <div class="caixa-lateral">
-        <select class="input" id="nome-do-planeta">
-            <option value="100">...</option>
-            <!-- <option value="Mercurio">Mercurio</option>
-            <option value="Venus">Venus</option>
-            <option value="Terra">Terra</option>
-            <option value="Terra">marte</option>
-            <option value="Terra">saturno</option> -->
-        </select>
-        <label class="tempo2"> time scale </label>
-        <input class="tempo" type="number" id="velocidade" value="1">
-        <button id="reset-camera-btn">Reset Camera</button> 
-    </div>
-    <div>
-        <div id="earth-container"></div>
-        <div id="info-panel"></div>
-    </div>
-    
-  </div>
-    <!-- Caixa de informações do planeta -->
-    <div id="info-box">
-        <h2 id="planet-name"></h2>
-        <p id="planet-size"></p>
-        <p id="planet-distance"></p>
-        <p id="descricao"></p>
+    <div class="controls">
+      <label for="nome-do-planeta">Selecione o Planeta</label>
+      <select id="nome-do-planeta" class="dropdown">
+        <option value="100">Selecione...</option>
+        <option value="0">Mercúrio</option>
+        <option value="1">Vênus</option>
+        <option value="2">Terra</option>
+        <option value="4">Marte</option>
+        <option value="7">Júpiter</option>
+        <option value="8">Saturno</option>
+        <option value="9">Urano</option>
+        <option value="10">Netuno</option>
+      </select>
+
+      <label for="velocidade">Escala de Tempo</label>
+      <input type="number" id="velocidade" value="1" min="0" step="0.1">
+
+      <button id="reset-camera-btn" class="btn">🔄 Resetar Câmera</button>
     </div>
 
+    <!-- IA de pesquisa -->
+    <div id="ai-search" class="ai-search">
+      <input type="text" id="planet-query" placeholder="Pergunte sobre um planeta..." />
+      <button id="search-btn">🔍</button>
+    </div>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script type="module" src="main2.js"></script> -->
+    <div id="ai-response" class="ai-response"></div>
+  </aside>
+
+  <!-- Cena principal -->
+  <main id="earth-container"></main>
+
+  <!-- Caixa de informações -->
+  <section id="info-box">
+    <h2 id="planet-name">Informações do Planeta</h2>
+    <p id="planet-size"></p>
+    <p id="planet-distance"></p>
+    <p id="descricao"></p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script type="module" src="main2.js"></script>
+  <script src="/js/ia.js"></script>
 </body>
 </html>
